@@ -1,4 +1,5 @@
-package br.univille.projetodsi.model;
+package br.univille.projetodsi.model; 
+
 
 import java.util.ArrayList;
 import java.util.List;

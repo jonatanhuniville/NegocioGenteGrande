@@ -1,12 +1,12 @@
 package br.univille.projetodsi.controller;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,4 +25,8 @@ public class PacienteController {
 		List<Paciente> listaPaciente = this.pacienteRepository.findAll();
 		return new ModelAndView("paciente/index", "listapac", listaPaciente);
 	}
+	@GetMapping("/novo")
+    public String createForm(@ModelAttribute Paciente paciente) {
+        return "paciente/form";
+    }
 }
